@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #C6DEBD;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #006C2B;
+}
+
+.carousel {
+  width: 75%;
+  margin: auto;
+}
+
+.search-bar {
+  height: 45px;
+}
+
+.sustainable-company {
+  margin-bottom: 20%;
+}
+
+.popular-search {
+  text-align: left;
+  padding-top: 5%;
+}
+
+.popular-search-items {
+  text-align: left;
+}
+
+.items-row {
+  padding-left: 45px;
+}
