@@ -1,10 +1,20 @@
 package com.lightningducks.sustainableswaps.controllers;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Iterator;
 
 @Controller
 public class WebController {
@@ -21,4 +31,47 @@ public class WebController {
         return text;
     }
 
+    @GetMapping(value = "/A4/camryn", produces = MediaType.TEXT_HTML_VALUE)
+    @ResponseBody
+    public String A4Camryn() throws IOException {
+        String text = "<html><body style='background-color: #ADD8E6; text-align: center'><h1>Apache Poi</h1>" +
+                "<p>Apache Poi reads .xlsx files. Below, Apache Poi is reading and printing an .xlsx file containing data showing the percentage of how frequent each letter in the alphabet is used in the English language.</p>" +
+                "<div>";
+
+        File myFile = new File("C:\\Users\\camry\\IdeaProjects\\sustainableswaps\\Sustainable-Swaps\\sustainableswaps\\src\\main\\java\\com\\lightningducks\\sustainableswaps\\A4data\\alphabet.xlsx");
+        FileInputStream fis = new FileInputStream(myFile);
+
+        XSSFWorkbook myWorkbook = new XSSFWorkbook(fis);
+        XSSFSheet mySheet = myWorkbook.getSheetAt(0);
+
+        Iterator<Row> rowIterator = mySheet.iterator();
+
+        while(rowIterator.hasNext()) {
+            Row row = rowIterator.next();
+
+            Iterator<Cell> cellIterator = row.cellIterator();
+            while (cellIterator.hasNext()) {
+                text += "<p>";
+
+                for (int i = 0; i < 2; i++) {
+                    Cell cell = cellIterator.next();
+
+                    switch (cell.getCellType()) {
+                        case Cell.CELL_TYPE_STRING:
+                            text += cell.getStringCellValue();
+                            break;
+                        case Cell.CELL_TYPE_NUMERIC:
+                            text += cell.getNumericCellValue();
+                    }
+
+                    if (i == 0) { text += " - "; }
+                }
+                text += "</p>";
+            }
+        }
+
+        text += "</div></body></html>";
+
+        return text;
+    }
 }
