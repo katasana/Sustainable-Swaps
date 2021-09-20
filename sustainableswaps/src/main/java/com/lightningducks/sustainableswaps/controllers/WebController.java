@@ -37,6 +37,12 @@ public class WebController {
         return text;
     }
 
+    @RequestMapping(value = "/sustainable/page", method = RequestMethod.GET)
+    @ResponseBody
+    String sustainablePage() {
+        return "A page of Sustainable Swaps";
+    }
+
     @GetMapping(value = "/A4/camryn", produces = MediaType.TEXT_HTML_VALUE)
     @ResponseBody
     public String A4Camryn() throws IOException {
