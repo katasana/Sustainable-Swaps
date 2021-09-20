@@ -1,5 +1,6 @@
 package com.lightningducks.sustainableswaps.controllers;
 
+import com.google.common.collect.ImmutableMap;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -16,6 +17,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.Map;
+
+import com.google.common.collect.ImmutableMap;
 
 @Controller
 public class WebController {
@@ -82,5 +86,12 @@ public class WebController {
     public String a3Kimberly() {
         String text = "<html><head><title>Hi this is Kimberly!</title><body><p>Hello this is my A3</p></body></head></html>";
         return text;
+    }
+
+    @RequestMapping("/A4/kimberly")
+    @ResponseBody
+    public Map a4Kimberly() {
+        Map lunchBox = ImmutableMap.of("title: ", "This is the contents of my lunchbox created using ImmutableMap.of","cookie", 1, "fork", 1, "sandwich", 2);
+        return lunchBox;
     }
 }
