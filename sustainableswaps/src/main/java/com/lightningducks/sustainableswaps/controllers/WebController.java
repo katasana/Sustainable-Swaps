@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.File;
@@ -72,6 +73,14 @@ public class WebController {
 
         text += "</div></body></html>";
 
+        return text;
+    }
+
+    // kimberly's assignments
+    @RequestMapping("/A3/kimberly")
+    @ResponseBody
+    public String a3Kimberly() {
+        String text = "<html><head><title>Hi this is Kimberly!</title><body><p>Hello this is my A3</p></body></head></html>";
         return text;
     }
 }
