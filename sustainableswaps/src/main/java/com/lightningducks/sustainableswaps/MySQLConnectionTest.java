@@ -16,6 +16,8 @@ public class MySQLConnectionTest implements CommandLineRunner {
 
     }
 /*
+@SpringBootApplication
+public class MySQLConnectionTest implements CommandLineRunner {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -48,6 +50,12 @@ public class MySQLConnectionTest implements CommandLineRunner {
 
     public void insertRow(String sql) {
         int result = jdbcTemplate.update(sql, "5", "test5");
+
+        // do an if-else for creating a new database if it doesn't already exist ?
+
+        String sql = "INSERT INTO test (testId, testInfo) VALUES (?, ?)";
+
+        int result = jdbcTemplate.update(sql, "4", "test4");
 
         if (result > 0) {
             System.out.println(result + "\nA new row has been inserted");
