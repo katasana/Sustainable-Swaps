@@ -29,7 +29,7 @@ public class WebController {
 
     @RequestMapping("/")
     public String getHome() {
-        return "home.html";
+        return "index.html";
     }
 
     @GetMapping(value = "/A3/camryn", produces = MediaType.TEXT_HTML_VALUE)
