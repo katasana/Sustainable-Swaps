@@ -2,10 +2,13 @@
 package com.lightningducks.sustainableswaps.controllers;
 
 import com.google.common.collect.ImmutableMap;
+import com.lightningducks.sustainableswaps.data.Product;
+import com.lightningducks.sustainableswaps.data.ProductRepository;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,9 +30,17 @@ import com.google.common.collect.ImmutableMap;
 @Controller
 public class WebController {
 
+    @Autowired
+    private ProductRepository productRepository;
+
     @RequestMapping("/")
     public String getHome() {
         return "index.html";
+    }
+
+    @GetMapping("/database/get-all")
+    public @ResponseBody Iterable<Product> getAllProducts() {
+        return productRepository.findAll();
     }
 
     @GetMapping(value = "/A3/camryn", produces = MediaType.TEXT_HTML_VALUE)
