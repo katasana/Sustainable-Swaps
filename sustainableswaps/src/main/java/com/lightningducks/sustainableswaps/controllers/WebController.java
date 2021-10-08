@@ -1,4 +1,3 @@
-//Test Test :)
 package com.lightningducks.sustainableswaps.controllers;
 
 import com.google.common.collect.ImmutableMap;
