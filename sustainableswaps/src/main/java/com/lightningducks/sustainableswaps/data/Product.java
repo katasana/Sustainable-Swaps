@@ -1,19 +1,21 @@
 package com.lightningducks.sustainableswaps.data;
 
 // The basic product object (DAO - data access object)
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 // @Entity tells Hibernate to make a table out of this class
+
 @Entity
 public class Product {
 
     // unique product ID
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int productId;
+    private Integer productId;
     private String productName;
     private String companyName;
     private String productType;
