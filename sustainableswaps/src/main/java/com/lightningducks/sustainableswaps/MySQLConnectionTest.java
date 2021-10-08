@@ -6,10 +6,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+// this runs even when SustainableswapsApplication is running
+// this class was only for testing purposes, and it commented out until needed
 
 @SpringBootApplication
 public class MySQLConnectionTest implements CommandLineRunner {
+    @Override
+    public void run(String... args) throws Exception {
 
+    }
+/*
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -31,6 +37,8 @@ public class MySQLConnectionTest implements CommandLineRunner {
             System.err.println("Table does not exist yet");
             System.out.println("Creating table 'test'");
 
+            System.err.println(e);
+
             String createTable = "CREATE TABLE test.test (testId INT NOT NULL, testInfo VARCHAR(45) NOT NULL, PRIMARY KEY (testId))";
             jdbcTemplate.execute(createTable);
 
@@ -45,4 +53,5 @@ public class MySQLConnectionTest implements CommandLineRunner {
             System.out.println(result + "\nA new row has been inserted");
         }
     }
+ */
 }
