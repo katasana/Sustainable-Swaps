@@ -11,15 +11,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 public class WebController {
@@ -35,6 +34,40 @@ public class WebController {
     @GetMapping("/database/get-all")
     public @ResponseBody Iterable<Product> getAllProducts() {
         return productRepository.findAll();
+    }
+
+    @PostMapping("/database/search")
+    public @ResponseBody Iterable<Product> search(@RequestParam String keyword) {
+        // tokenize string
+        StringTokenizer tokenizer = new StringTokenizer(keyword);
+        List<String> keywords = new ArrayList<>();
+        while (tokenizer.hasMoreTokens()) {
+            keywords.add(tokenizer.nextToken());
+        }
+
+        // search product database keywords
+        System.out.println(productRepository.findAll());
+        List<Product> allProducts = (ArrayList<Product>)productRepository.findAll();
+        List<Product> searchResults = new ArrayList<>();
+        int productsCount = allProducts.size();
+        int indexOfKeywords;
+        int indexOfProductDescription;
+
+        for (int i = 0; i < productsCount; i++) {
+            Product curProduct = allProducts.get(i);
+            String product = curProduct.toString();
+            indexOfKeywords = product.indexOf("keywords") + 7; // start searching keywords from after 'keywords' column
+            // indexOfProductDescription = product.indexOf("productDescription"); // end search at 'product_description' column (following column)
+            String keywordsColumn = (product.substring(indexOfKeywords)).toLowerCase();
+
+            for (int j = 0; j < keywords.size(); j++) {
+                if (keywordsColumn.contains(keywords.get(i).toLowerCase())) {
+                    searchResults.add(curProduct);
+                }
+            }
+        }
+
+        return searchResults;
     }
 
     @GetMapping(value = "/A3/camryn", produces = MediaType.TEXT_HTML_VALUE)
