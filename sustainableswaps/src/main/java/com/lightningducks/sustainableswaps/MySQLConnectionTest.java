@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 // this runs even when SustainableswapsApplication is running
 // this class was only for testing purposes, and it commented out until needed
 
-@SpringBootApplication
+// @SpringBootApplication
 public class MySQLConnectionTest implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
