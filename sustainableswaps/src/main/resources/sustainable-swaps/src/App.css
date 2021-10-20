@@ -12,28 +12,6 @@
   color: #006C2B;
 }
 
-.carousel {
-  width: 75%;
-  margin: auto;
-}
-
 .search-bar {
   height: 45px;
-}
-
-.sustainable-company {
-  margin-bottom: 20%;
-}
-
-.popular-search {
-  text-align: left;
-  padding-top: 5%;
-}
-
-.popular-search-items {
-  text-align: left;
-}
-
-.items-row {
-  padding-left: 45px;
 }

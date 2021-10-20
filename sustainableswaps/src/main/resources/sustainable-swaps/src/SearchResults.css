@@ -1,0 +1,33 @@
+.header1 {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.mb-3 {
+  padding-bottom: 40px;
+}
+
+.card-image {
+  height: 250px;
+}
+
+.column {
+  padding-bottom: 50px;
+}
+
+.products {
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.product {
+  width: 300px;
+}
+
+.product-accordion {
+  padding-top: 20px;
+}
+
+.product-description {
+  font-size: 15px;
+}
