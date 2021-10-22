@@ -8,10 +8,18 @@ import ForDays from './images/fordays.jpg';
 import EcoRoots from './images/ecoroots.jpg';
 import Baggu from './images/baggu.jpg';
 import EarthHero from './images/earthhero.jpg';
+import Teal from './images/teal-color.jpg';
+import {getAllProducts} from "./ProductService";
 
 function Home() {
 
   var page = useHistory();
+
+  /*getAllProducts = () => {
+    getAllProducts(page).then(products => {
+      console.log(products);
+    });
+  }*/
 
   return (
     <div className="App">
@@ -25,7 +33,8 @@ function Home() {
           <FormControl className="search-bar"
             placeholder="enter keyword"
           />
-          <Button variant="outline-dark" id="button-addon2" onClick={() => page.push('/searchresults')}>
+          <!-- <Button variant="outline-dark" id="button-addon2" onClick={() => page.push('/searchresults')}> -->
+          <Button variant="outline-dark" id="button-addon2" onClick="getAllProducts(page)">
             Button
           </Button>
           </InputGroup>

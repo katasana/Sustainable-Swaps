@@ -33,6 +33,7 @@ public class WebController {
 
     @GetMapping("/database/get-all")
     public @ResponseBody Iterable<Product> getAllProducts() {
+        System.out.println("In backend getAllProducts method...");
         return productRepository.findAll();
     }
 
