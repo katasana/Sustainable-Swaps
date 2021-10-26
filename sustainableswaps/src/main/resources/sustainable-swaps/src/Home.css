@@ -2,9 +2,13 @@
   width: 75%;
   margin: auto;
 }
-  
-.search-bar {
-  height: 45px;
+
+.h1 {
+  margin: auto;
+}
+
+.h1:hover {
+  cursor: pointer;
 }
   
 .sustainable-company {

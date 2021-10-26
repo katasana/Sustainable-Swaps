@@ -3,7 +3,11 @@ import './Home.css';
 import { useHistory } from 'react-router-dom';
 import { Button, Col, Row, Container, Carousel, FormControl, InputGroup } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Teal from './images/teal-color.jpg';
+import Allbirds from './images/allbirds.jpg';
+import ForDays from './images/fordays.jpg';
+import EcoRoots from './images/ecoroots.jpg';
+import Baggu from './images/baggu.jpg';
+import EarthHero from './images/earthhero.jpg';
 
 function Home() {
 
@@ -13,7 +17,7 @@ function Home() {
     <div className="App">
       <header className="App-header">
         <br/>
-        <h1>Sustainable Swaps</h1>
+        <h1 className="h1" onClick={() => page.push('/')}>Sustainable Swaps</h1>
         <br/>
 
         <Container>
@@ -29,44 +33,39 @@ function Home() {
 
         <Carousel className="carousel-home">
           <Carousel.Item>
-            <img className="d-block w-100" src={Teal}/>
-
-            <Carousel.Caption className="sustainable-company">
-              <h3>Sustainable Company 1</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          
-          <Carousel.Item>
-            <img className="d-block w-100" src={Teal}/>
-
-            <Carousel.Caption className="sustainable-company">
-              <h3>Sustainable Company 2</h3>
-            </Carousel.Caption>
+            <a href="https://www.allbirds.com/">
+              <img className="d-block w-100" src={Allbirds}/>
+            </a>
           </Carousel.Item>
 
           <Carousel.Item>
-            <img className="d-block w-100" src={Teal}/>
-
-            <Carousel.Caption className="sustainable-company">
-              <h3>Sustainable Company 3</h3>
-            </Carousel.Caption>
+            <a href="https://fordays.com/">
+              <img className="d-block w-100" src={ForDays}/>
+            </a>
           </Carousel.Item>
 
           <Carousel.Item>
-            <img className="d-block w-100" src={Teal}/>
-
-            <Carousel.Caption className="sustainable-company">
-              <h3>Sustainable Company 4</h3>
-            </Carousel.Caption>
+            <a href="https://ecoroots.us/">
+              <img className="d-block w-100" src={EcoRoots}/>
+            </a>
           </Carousel.Item>
 
           <Carousel.Item>
-            <img className="d-block w-100" src={Teal}/>
+            <a href="https://baggu.com/">
+              <img className="d-block w-100" src={Baggu}/>
+            </a>
 
-            <Carousel.Caption className="sustainable-company">
-              <h3>Sustainable Company 5</h3>
-            </Carousel.Caption>
+            <a href="https://baggu.com/">
+              <Carousel.Caption className="sustainable-company">
+                <h1>Baggu</h1>
+              </Carousel.Caption>
+            </a>
           </Carousel.Item>
+
+          <Carousel.Item>
+            <a href="https://earthhero.com/">
+              <img className="d-block w-100" src={EarthHero}/>
+            </a>
         </Carousel>
 
         <h2 className="popular-search">Popular Searches</h2>

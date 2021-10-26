@@ -13,7 +13,7 @@ function SearchResults() {
     <div className="App">
       <header className="App-header">
         <br/>
-        <h1 className="header1">Sustainable Swaps</h1>
+        <h1 className="header1" onClick={() => page.push('/')}>Sustainable Swaps</h1>
         <br/>
 
         <Container>

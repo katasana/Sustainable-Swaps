@@ -1,6 +1,11 @@
 .header1 {
+  margin: auto;
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 28px;
+}
+
+.header1:hover {
+  cursor: pointer;
 }
 
 .mb-3 {
