@@ -1,40 +1,44 @@
-import './App.css';
-import './Home.css';
-import { useHistory } from 'react-router-dom';
+// import './App.css';
+// import './Home.css';
+// import { useHistory } from 'react-router-dom';
 import { Button, Col, Row, Container, Carousel, FormControl, InputGroup } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Allbirds from './images/allbirds.jpg';
-import ForDays from './images/fordays.jpg';
-import EcoRoots from './images/ecoroots.jpg';
-import Baggu from './images/baggu.jpg';
-import EarthHero from './images/earthhero.jpg';
-import Teal from './images/teal-color.jpg';
-import {getAllProducts} from "./services/ProductService";
-import React from "react";
+import Allbirds from '../images/allbirds.jpg';
+import ForDays from '../images/fordays.jpg';
+import EcoRoots from '../images/ecoroots.jpg';
+import Baggu from '../images/baggu.jpg';
+import EarthHero from '../images/earthhero.jpg';
+import Teal from '../images/teal-color.jpg';
+import React, {useEffect, useState} from "react";
+import ProductService from "../services/ProductService";
+import {useHistory} from "react-router-dom";
 
-const Home = () => {
+const HomeCarousel = () => {
+
     return (
         <div>
             <div>
                 <div className="input-group mb-3">
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search by keyword"
-                        value={searchKeywords}
-                        onChange={onChangeSearchKeywords}
-                    />
-                    <div className="input-group-append">
-                        <button
-                            variant="outline-dark"
-                            id="button-addon2"
-                            className="btn btn-outline-secondary"
-                            type="button"
-                            onClick={findByKeywords}
-                        >
-                            Search
-                        </button>
-                    </div>
+                    <form
+                        action={"/products"}
+                        method={"get"}
+                        className={"form-control"}>
+                        <input
+                            type="text"
+                            placeholder="Search products"
+                            name={"keywords"}
+                            className={"form-control"}/>
+
+                        <div className="input-group-append">
+                            <button
+                                variant="outline-dark"
+                                id="button-addon2"
+                                className="btn btn-outline-secondary"
+                                type="submit">
+                                Search
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -91,6 +95,7 @@ const Home = () => {
     );
 };
 
+export default HomeCarousel;
 
 /*
 function Home() {

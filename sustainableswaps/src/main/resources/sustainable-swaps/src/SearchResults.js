@@ -5,6 +5,7 @@ import { Button, Col, Row, Container, Card, Accordion, Image, FormControl, Input
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Teal from './images/teal-color.jpg';
 
+/*
 function SearchResults() {
 
   var page = useHistory();
@@ -207,3 +208,5 @@ function SearchResults() {
 }
 
 export default SearchResults;
+
+*/
