@@ -16,22 +16,29 @@ import SearchBar from "./components/SearchBar";
 
 const App = () => {
 
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('keywords');
+    const [searchQuery, setSearchQuery] = useState(query || '');
+
     return (
-        <div className="App">
-            <div className="App">
-                    <br/>
+        <div className="App App-background">
+            <header className="App-header">
+                <br/>
                     <h1 className="h1">
-                        <Link to={"/"}>
+                        <Link to={"/"} style={{textDecoration: 'none', color: '#006C2B'}}>
                             Sustainable Swaps
                         </Link>
                     </h1>
-                    <br/>
-            </div>
+                <br/>
 
-            <div className="container mt-3">
+                <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
+
+            </header>
+
+            <div className="container">
                 <Switch>
                     <Route exact path={"/"} component={HomeCarousel} />
-                    <Route exact path={"/products"} component={SearchResults} />
+                    <Route path={"/products"} component={SearchResults} />
                 </Switch>
             </div>
         </div>
@@ -39,19 +46,3 @@ const App = () => {
 }
 
 export default App;
-
-/*
-import './App.css';
-import Home from './Home';
-
-function App() {
-  return (
-    <div className="App">
-      <div className="App">
-        <Home/>
-      </div>
-    </div>
-  );
-}
-
-export default App; */

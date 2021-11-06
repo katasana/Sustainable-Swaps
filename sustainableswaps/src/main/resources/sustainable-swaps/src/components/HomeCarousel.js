@@ -17,31 +17,6 @@ const HomeCarousel = () => {
 
     return (
         <div>
-            <div>
-                <div className="input-group mb-3">
-                    <form
-                        action={"/products"}
-                        method={"get"}
-                        className={"form-control"}>
-                        <input
-                            type="text"
-                            placeholder="Search products"
-                            name={"keywords"}
-                            className={"form-control"}/>
-
-                        <div className="input-group-append">
-                            <button
-                                variant="outline-dark"
-                                id="button-addon2"
-                                className="btn btn-outline-secondary"
-                                type="submit">
-                                Search
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
             <Container>
                 <Carousel className="carousel-home">
                     <Carousel.Item>

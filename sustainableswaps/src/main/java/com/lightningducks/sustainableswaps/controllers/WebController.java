@@ -17,22 +17,29 @@ public class WebController {
     @Autowired
     private ProductRepository productRepository;
 
+    @GetMapping("/test-get-all")
+    public List<Product> testGetAll() {
+        return (List<Product>) productRepository.findAll();
+    }
+
     @GetMapping("/products")
     public ResponseEntity<List<Product>> searchResults(@RequestParam(required = false) String keywords) {
         try {
-            System.out.println("In search results method for keyword(s): " + keywords);
+            System.out.println("In results method for keyword(s): " + keywords);
             List<Product> products = new ArrayList<Product>();
 
-            if (keywords == null)
+            if (keywords == null) {
                 productRepository.findAll().forEach(products::add);
-            else
+            } else {
                 productRepository.findByKeywordsContaining(keywords).forEach(products::add);
+            }
 
             if (products.isEmpty()) {
+                System.out.println("No products found");
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
 
-            System.out.println(products);
+            System.out.println("Number of products found: " + products.size());
 
             return new ResponseEntity<>(products, HttpStatus.OK);
         } catch (Exception e) {
