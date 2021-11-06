@@ -1,15 +1,15 @@
-import React, { useState, useEffect} from "react";
+import React, { useState} from "react";
 import ProductService from "../services/ProductService";
-import {Link, useHistory} from "react-router-dom";
-import {Accordion, Button, Card, Col, Container, FormControl, Image, InputGroup, Row} from "react-bootstrap";
+import {Accordion, Button, Card} from "react-bootstrap";
 import Teal from "../images/teal-color.jpg";
 
 const SearchResults = () => {
 
     const { search } = window.location;
-    const query = new URLSearchParams(search).get('keywords');
+    const query = new URLSearchParams(search).get('keywords'); //gets keywords parameters from path
     const [products, setProducts] = useState([]);
 
+    // calls java method to search for products with keywords
     const findByKeywords = () => {
         ProductService.findByKeywords(query)
             .then(response => {
@@ -21,6 +21,7 @@ const SearchResults = () => {
             });
     };
 
+    // renders cards with product information
     const renderProduct = (product, index) => {
         return(
             <Card style={{width:"18rem"}} key={index} className={"box"}>

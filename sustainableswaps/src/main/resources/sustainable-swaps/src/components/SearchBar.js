@@ -1,8 +1,9 @@
 import "../App.css";
 import {Container, InputGroup} from "react-bootstrap";
 
-const SearchBar = ({searchQuery, setSearchQuery}) => {
+const SearchBar = ({setSearchQuery}) => {
 
+    // updates path and keywords on a new search
     const onChangeSearchKeywords = e => {
         const searchQuery = e.target.value;
         setSearchQuery(searchQuery);
@@ -22,7 +23,6 @@ const SearchBar = ({searchQuery, setSearchQuery}) => {
                                 placeholder="Search products"
                                 name={"keywords"}
                                 />
-
 
                                 <button
                                     variant="outline-dark"

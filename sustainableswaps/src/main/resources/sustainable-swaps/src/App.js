@@ -1,17 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import {Button, Carousel, Col, Container, FormControl, InputGroup, Row} from "react-bootstrap";
-import Allbirds from "./images/allbirds.jpg";
-import ForDays from "./images/fordays.jpg";
-import EcoRoots from "./images/ecoroots.jpg";
-import Baggu from "./images/baggu.jpg";
-import EarthHero from "./images/earthhero.jpg";
-
 import SearchResults from "./components/SearchResults";
 import HomeCarousel from "./components/HomeCarousel";
-import ProductService from "./services/ProductService";
 import SearchBar from "./components/SearchBar";
 
 const App = () => {
