@@ -1,5 +1,5 @@
 import "../App.css";
-import {Container, InputGroup} from "react-bootstrap";
+import {Button, Container, InputGroup} from "react-bootstrap";
 
 const SearchBar = ({setSearchQuery}) => {
 
@@ -15,22 +15,22 @@ const SearchBar = ({setSearchQuery}) => {
                         <form
                             action={"/products"}
                             method={"get"}
-                            className={"search-bar"}
+
                             onSubmit={onChangeSearchKeywords} >
 
                             <input
                                 type="text"
+                                className={"search-bar"}
                                 placeholder="Search products"
                                 name={"keywords"}
                                 />
 
-                                <button
+                                <Button
                                     variant="outline-dark"
                                     id="button-addon2"
-                                    className="btn btn-outline-secondary"
                                     type="submit">
                                     Search
-                                </button>
+                                </Button>
 
                         </form>
                     </InputGroup>

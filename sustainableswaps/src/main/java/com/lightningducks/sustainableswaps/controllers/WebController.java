@@ -17,11 +17,6 @@ public class WebController {
     @Autowired
     private ProductRepository productRepository;
 
-    @GetMapping("/test-get-all")
-    public List<Product> testGetAll() {
-        return (List<Product>) productRepository.findAll();
-    }
-
     @GetMapping("/products")
     public ResponseEntity<List<Product>> searchResults(@RequestParam(required = false) String keywords) {
         try {
