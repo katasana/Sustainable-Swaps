@@ -3,8 +3,6 @@
 }
 
 .App-header {
-  background-color: #C6DEBD;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +10,15 @@
   color: #006C2B;
 }
 
+.App-background {
+  background-color: #C6DEBD;
+}
+
 .search-bar {
   height: 45px;
+  width: 1150px;
+}
+
+.search-button {
+  height: 55px;
 }
