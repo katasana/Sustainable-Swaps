@@ -1,4 +1,4 @@
-import { Col, Row, Container, Carousel} from 'react-bootstrap'
+import { Container, Carousel} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Allbirds from '../images/allbirds.jpg';
 import ForDays from '../images/fordays.jpg';
@@ -49,15 +49,6 @@ const HomeCarousel = () => {
                         </a>
                     </Carousel.Item>
                 </Carousel>
-
-                <h2 className="popular-search">Popular Searches</h2>
-                <Col md>
-                    <Row className="items-row">
-                        <h3 className="popular-search-items">Item 1</h3>
-                        <h3 className="popular-search-items">Item 2</h3>
-                        <h3 className="popular-search-items">Item 3</h3>
-                    </Row>
-                </Col>
             </Container>
 
         </div>

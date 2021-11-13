@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 import { Switch, Route, Link } from "react-router-dom";
+import { Container } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import './Home.css';
+import './SearchResults.css';
 import SearchResults from "./components/SearchResults";
 import HomeCarousel from "./components/HomeCarousel";
 import SearchBar from "./components/SearchBar";
@@ -23,16 +26,15 @@ const App = () => {
                     </h1>
                 <br/>
 
-                <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
+                <Container>
+                    <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
+                        <Switch>
+                            <Route exact path={"/"} component={HomeCarousel} />
+                            <Route exact path={"/products"} component={SearchResults} />
+                        </Switch>
+                </Container>
 
             </header>
-
-            <div className="container">
-                <Switch>
-                    <Route exact path={"/"} component={HomeCarousel} />
-                    <Route exact path={"/products"} component={SearchResults} />
-                </Switch>
-            </div>
         </div>
     );
 }
