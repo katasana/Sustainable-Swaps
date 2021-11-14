@@ -1,5 +1,5 @@
 import "../App.css";
-import {Button, Container, InputGroup} from "react-bootstrap";
+import {Button, Container, FormControl, InputGroup} from "react-bootstrap";
 
 const SearchBar = ({setSearchQuery}) => {
 
@@ -11,29 +11,28 @@ const SearchBar = ({setSearchQuery}) => {
 
     return(
                 <Container className={"App"}>
-                    <InputGroup className="mb-3">
+                    <div>
                         <form
                             action={"/products"}
                             method={"get"}
-
+                            className={"input-group mb-3"}
                             onSubmit={onChangeSearchKeywords} >
 
                             <input
                                 type="text"
-                                className={"search-bar"}
+                                className={"form-control"}
                                 placeholder="Search products"
                                 name={"keywords"}
-                                />
+                            />
 
                                 <Button
                                     variant="outline-dark"
-                                    id="button-addon2"
                                     type="submit">
                                     Search
                                 </Button>
 
                         </form>
-                    </InputGroup>
+                    </div>
                 </Container>
     );
 };
