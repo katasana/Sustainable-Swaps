@@ -7,10 +7,9 @@ import javax.persistence.*;
 // @Entity tells Hibernate to make a table out of this class
 
 @Entity
-@Table(name = "products")
+@Table(name = "sustainable-products")
 public class Product {
 
-    // unique product ID
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer productId;
@@ -24,9 +23,14 @@ public class Product {
     @Column(name = "product_type")
     private String productType;
 
-    @Column(name = "product_link")
+    @Column(name = "link")
     private String productLink;
-    // private String productImage;
+
+    @Column(name = "image_id")
+    private Integer imageId;
+
+    @Column(name = "product_image")
+    private String productImage;
 
     @Column(name = "product_description")
     private String productDescription;
@@ -38,13 +42,15 @@ public class Product {
 
     }
 
-    public Product(Integer productId, String productName, String companyName, String productType, String productLink, String productDescription, String keywords) {
+    public Product(Integer productId, String productName, String companyName, String productType, String productLink, Integer imageId, String productImage, String productDescription, String keywords) {
         super();
         this.productId = productId;
         this.productName = productName;
         this.companyName = companyName;
         this.productType = productType;
         this.productLink = productLink;
+        this.imageId = imageId;
+        this.productImage = productImage;
         this.productDescription = productDescription;
         this.keywords = keywords;
     }
@@ -88,6 +94,14 @@ public class Product {
     public void setProductLink(String productLink) {
         this.productLink = productLink;
     }
+
+    public Integer getImageId() { return imageId; }
+
+    public void setImageId(Integer imageId) { this.imageId = imageId; }
+
+    public String getProductImage() { return productImage; }
+
+    public void setProductImage(String productImage) { this.productImage = productImage; }
 
     public String getProductDescription() {
         return productDescription;
