@@ -7,7 +7,7 @@ import javax.persistence.*;
 // @Entity tells Hibernate to make a table out of this class
 
 @Entity
-@Table(name = "sustainable-products")
+@Table(name = "`sustainable-products`")
 public class Product {
 
     @Id

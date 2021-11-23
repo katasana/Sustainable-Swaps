@@ -1,4 +1,4 @@
-import "../App.css";
+import "../../App.css";
 import {Button, Container, FormControl, InputGroup} from "react-bootstrap";
 
 const SearchBar = ({setSearchQuery}) => {

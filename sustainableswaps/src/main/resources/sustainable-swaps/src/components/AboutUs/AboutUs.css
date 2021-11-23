@@ -1,0 +1,36 @@
+.aboutus-title {
+    color: #006C2B;
+    font-size: xxx-large;
+}
+
+.ourgoal-title{
+    font-size: xxx-large;
+}
+
+.our-goal-col1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.goal-text{
+    font-size: x-large;
+    font-family: 'Cantarell', sans-serif;
+    align-self: center;
+}
+
+.listUs {
+    padding-left:0;
+    margin-left:0;
+    list-style-position:inside;
+}
+
+.profile-pic {
+    height: 250px;
+    width: 250px;
+}
+
+.box-border {
+    border-color: black;
+    border-style: solid;
+}
