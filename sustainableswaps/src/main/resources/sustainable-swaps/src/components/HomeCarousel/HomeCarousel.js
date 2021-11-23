@@ -1,10 +1,10 @@
 import { Container, Carousel} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Allbirds from '../images/allbirds.jpg';
-import ForDays from '../images/fordays.jpg';
-import EcoRoots from '../images/ecoroots.jpg';
-import Baggu from '../images/baggu.jpg';
-import EarthHero from '../images/earthhero.jpg';
+import Allbirds from '../../images/allbirds.jpg';
+import ForDays from '../../images/fordays.jpg';
+import EcoRoots from '../../images/ecoroots.jpg';
+import Baggu from '../../images/baggu.jpg';
+import EarthHero from '../../images/earthhero.jpg';
 import React from "react";
 
 const HomeCarousel = () => {
