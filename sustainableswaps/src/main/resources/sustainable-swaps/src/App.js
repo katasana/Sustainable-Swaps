@@ -45,8 +45,8 @@ const App = () => {
                     <SearchBar class="mb-4 flex-d" searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
                     <Switch>
                         <Route exact path={"/"} component={HomeCarousel} />
-                        <Route exact path={"/products"} component={SearchResults} />
-                        <Route exact path-={"/aboutUs"} component={AboutUs}/>
+                        <Route path={"/products"} component={SearchResults} />
+                        <Route exact path={"/aboutUs"} component={AboutUs}/>
                     </Switch>
                 </Container>
             </body>

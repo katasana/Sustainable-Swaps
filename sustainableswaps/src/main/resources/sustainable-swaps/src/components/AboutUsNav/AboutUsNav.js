@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './AboutUsNav.css'
 import React from "react";
 import { Navbar, Nav, Offcanvas, Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 const AboutUsNav = () => {
 
@@ -16,7 +17,7 @@ const AboutUsNav = () => {
                     <Offcanvas.Body>
                         <Nav className="justify-content-end flex-grow-1 pe-3">
                             <Nav.Link href="../">Home</Nav.Link>
-                            <Nav.Link href="./AboutUs/AboutUs.js">About Us</Nav.Link>
+                            <Nav.Link as={Link} to="/aboutUs">About Us</Nav.Link>
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
