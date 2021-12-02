@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import ProductService from "../../services/ProductService";
 import {Accordion, Button, Card} from "react-bootstrap";
 import Teal from "../../images/teal-color.jpg";
-import './SearchResults.css'
+import './SearchResults.css';
 
 const SearchResults = () => {
 
