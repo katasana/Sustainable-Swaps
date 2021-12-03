@@ -53,11 +53,11 @@ const SearchResults = () => {
 
     return (
         <div>
-            <h4>Search Results for {query}</h4>
-            <div className="products">
-                    {products.map(renderProduct)}
-            </div>
+            {products.length!=0
+                ? <React.Fragment><h4>Search results for {query}</h4><div className="products">  {products.map(renderProduct)}</div></React.Fragment>
+                : <h4>No results for {query}</h4>}
         </div>
+
     );
 };
 
